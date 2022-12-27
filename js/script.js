@@ -44,5 +44,6 @@ function myButtonClicked() {
   }
 
   // output
-  document.getElementById("result").innerHTML = "The result is: " + result + " R" + remainder
+  document.getElementById("result").innerHTML =
+    "The result is: " + result + " R" + remainder
 }
