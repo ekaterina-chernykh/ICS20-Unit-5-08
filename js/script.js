@@ -40,9 +40,10 @@ function myButtonClicked() {
   result = counter
 
   if ((val1 < 0 && val2 > 0) || (val1 > 0 && val2 < 0)) {
-    result = result * (-1)
+    result = result * -1
   }
-  
+
   // output
-  document.getElementById("result").innerHTML = "The result is: " + result + "R" + remainder
+  document.getElementById("result").innerHTML =
+    "The result is: " + result + "R" + remainder
 }
