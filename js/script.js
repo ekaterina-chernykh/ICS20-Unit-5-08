@@ -10,8 +10,8 @@
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS20-PWA-Test/sw.js", {
-    scope: "/ICS20-PWA-Test/",
+  navigator.serviceWorker.register("/ICS20-Unit-5-08/sw.js", {
+    scope: "/ICS20-Unit-5-08/",
   })
 }
 
@@ -20,10 +20,29 @@ if (navigator.serviceWorker) {
  */
 function myButtonClicked() {
   // input
-  const height = parseFloat(document.getElementById("height").value)
+  const val1 = parseInt(document.getElementById("val1").value)
+  const val2 = parseInt(document.getElementById("val2").value)
+  let result = 0
+  let counter = 0
+  let val1pos
+  let val2pos
+  let remainder
 
   // process
-  const volume = 2
+  val1pos = Math.abs(val1)
+  val2pos = Math.abs(val2)
+  remainder = val1pos
+
+  while (remainder >= val2pos) {
+    remainder = remainder - val2pos
+    counter = counter + 1
+  }
+  result = counter
+
+  if ((val1 < 0 && val2 > 0) || (val1 > 0 && val2 < 0)) {
+    result = result * (-1)
+  }
+  
   // output
-  document.getElementById("volume").innerHTML = "Volume is: " + volume + "mm³"
+  document.getElementById("result").innerHTML = "The result is: " + result + "R" + remainder
 }
